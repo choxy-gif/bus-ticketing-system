@@ -1,54 +1,54 @@
-Online Bus Ticket and Parcel Booking System
-Project Overview
+🚀 Revel Project
 
-The Online Bus Ticket and Parcel Booking System is a full-stack web application developed to modernize public transport services by enabling passengers to book bus tickets and send parcels online. The system eliminates the need for physical booking offices by providing a secure, convenient, and user-friendly digital platform where customers can reserve seats, make online payments, track bookings, and receive electronic tickets.
+Welcome to the Revel Project! This guide will get you up and running with both the backend server and the frontend application.
+💻 Prerequisites
 
-The application was designed using modern web technologies and follows a client-server architecture, allowing users to access the system from any internet-enabled device. It supports both passenger ticket reservations and parcel delivery services within a single integrated platform.
+Before you begin, ensure you have the following installed on your system:
 
-To enhance convenience, the system integrates M-Pesa STK Push for secure mobile payments, enabling customers to complete transactions directly from their mobile phones. After successful payment, the system automatically generates booking confirmations and electronic tickets, reducing paperwork and improving operational efficiency.
+    Node.js (LTS version recommended)
 
-The platform also includes a comprehensive administrator dashboard that enables transport operators to manage routes, buses, schedules, bookings, customers, parcel deliveries, and payments. Administrators can monitor daily operations, generate reports, update schedules, and oversee seat availability in real time.
+    PostgreSQL
 
-Overall, the project demonstrates practical knowledge in full-stack web development, database management, payment gateway integration, authentication and authorization, RESTful API development, and responsive user interface design, while addressing real-world challenges faced by transport companies and their customers.
+⚙️ Setup and Installation
 
-Key Features
-Online bus ticket booking
-Parcel booking and delivery management
-Real-time seat availability
-M-Pesa STK Push payment integration
-Electronic ticket generation
-User registration and authentication
-Admin dashboard
-Route and schedule management
-Booking history
-Payment management
-Responsive web interface
-Secure role-based access control
-Technologies Used
-Frontend
-React.js
-Tailwind CSS
-HTML5
-CSS3
-JavaScript (ES6)
-Backend
-Node.js
-Express.js
-Database
-MariaDB / MySQL
-phpMyAdmin
-Other Tools
-XAMPP
-REST APIs
-Git & GitHub
-Visual Studio Code
-Skills Demonstrated
-Full-Stack Web Development
-Database Design and Management
-API Development
-Payment Gateway Integration (M-Pesa STK Push)
-Authentication & Authorization
-CRUD Operations
-Responsive Web Design
-Version Control with Git & GitHub
-Problem Solving and System Analysis
+Follow these steps to set up and get the project running on your local machine.
+1. Environment Configuration
+
+Create a file named .env in the root directory of your project (where package.json is located). Add your database credentials to this file:
+
+    DB_HOST=localhost
+    DB_USER=root
+    DB_PASSWORD=your_database_password
+    DB_DATABASE=bus_booking # Don't forget your database name!
+    PORT=3000 # Or your desired backend port
+
+Important: Never commit your .env file to version control. It contains sensitive information. We recommend adding .env to your .gitignore file.
+2. Install Dependencies
+
+Open your terminal in the root directory of the project and run the following command to install dependencies for both the frontend and backend:
+
+    npm run setup
+
+This command first installs root-level dependencies (if any).
+▶️ Running the Application
+1. Start the Backend Server
+
+Navigate into the server directory and start the backend:
+
+    cd server
+    npm run server
+
+The server should start on the port specified in your .env file (e.g., http://localhost:3000).
+2. Run One-Time Backend Initialization
+
+After the backend server is running, you must visit the following URL in your browser (or use Postman) to explicitly trigger database initialization and seeding:
+
+   http://localhost:3000/api/init
+
+3. Start the Frontend App
+
+Open a new terminal window (keep the backend server running in the first one), navigate back to the root directory of your project, and start the frontend:
+
+    npm run dev
+
+Your frontend application should now be accessible in your web browser, typically at http://localhost:5173 (or similar, depending on your frontend framework's default development port).
